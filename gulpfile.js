@@ -17,6 +17,7 @@ gulp.task('build:js', () =>
   gulp
   .src([
     'node_modules/angular/angular.js',
+    'node_modules/angular-ui-router/release/angular-ui-router.js',
     'client/**/*.module.js',
     'client/**/*.js'
   ])

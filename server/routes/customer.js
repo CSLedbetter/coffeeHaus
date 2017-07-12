@@ -22,10 +22,10 @@ router.get('/:id', function (req, res) {
 
 //POST: /api/customers
 router.post('/', function (req, res) {
-  const customer = db.Customer.build(req, res);
+  const newCustomer = new db.Customer(req.body);
 
-  customer.save().then(function (newCustomer) {
-    res.send(newCustomer);
+  newCustomer.save().then(function (customer) {
+    res.status(201).json(customer);
   });
 });
 
@@ -53,3 +53,4 @@ router.delete('/:id', function (req, res) {
 
 
 module.exports = router;
+

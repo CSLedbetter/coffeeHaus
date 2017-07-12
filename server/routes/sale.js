@@ -22,10 +22,10 @@ router.get('/:id', function (req, res) {
 
 //POST: /api/sales
 router.post('/', function (req, res) {
-  const sale = db.Sale.build(req, res);
+  const sale = db.Sale.build(req.body);
 
   sale.save().then(function (newSale) {
-    res.send(newSale);
+     res.status(201).json(newSale);
   });
 });
 
