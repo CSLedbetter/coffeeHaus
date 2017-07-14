@@ -42,9 +42,9 @@
                 });
         }
 
-        function update() {
+        function update(customer) {
             return $http
-                .put('/api/customers' + id, customer)
+                .put('/api/customers/' + customer.id, customer)
                 .then(function (response) {
                     return response.data;
                 });

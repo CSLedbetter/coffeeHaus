@@ -8,23 +8,30 @@
   <link rel="stylesheet" href="css/bundle.min.css">
 </head>
 
-<body ng-controller="coffeeController as coffeeCtrl">
-
-  <div class="container">
-    <div class="jumbotron">
-      <h1>Coffee Haus</h1>
-      <h4><small>Wir gut ja!!</small></h4>
-    </div>
+<body>
 
 
 
-
-
+  <div class="navbar navbar-default">
+    <a class="navbar-brand" ui-sref="dashboard">Coffee Haus</a>
+    <ul class="nav navbar-nav">
+      <li ui-sref-active="active">
+        <a ui-sref="dashboard">Dashboard</a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="customer-grid">Customers</a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="products">Products</a>
+      </li>
+    </ul>
   </div>
 
-
+  <div class="container">
+    <div ui-view></div>
+  </div>
+  
   <script src="js/bundle.min.js"></script>
 </body>
 
 </html>
-
