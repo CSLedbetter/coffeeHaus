@@ -38,5 +38,29 @@ appConfig.$inject = ['$urlRouterProvider', '$stateProvider'];
             templateUrl: 'app/customers/customers.detail.template.html'
         });
 
+        $stateProvider.state('product-grid', {
+            url: '/product-grid',
+            controller: 'ProductsGridController as productsGridCtrl',
+            templateUrl: 'app/products/products.grid.template.html'
+        });;
+
+        $stateProvider.state('product-detail', {
+            url: '/product-detail?id',
+            controller: 'ProductsDetailController as productsDetailCtrl',
+            templateUrl: 'app/products/products.detail.template.html'
+        });
+
+         $stateProvider.state('sale-grid', {
+            url: '/sale-grid',
+            controller: 'SalesGridController as salesGridCtrl',
+            templateUrl: 'app/sales/sales.grid.template.html'
+        });;
+
+        $stateProvider.state('sale-detail', {
+            url: '/sale-detail?id',
+            controller: 'SalesDetailController as salesDetailCtrl',
+            templateUrl: 'app/sales/sales.detail.template.html'
+        });
+
     }
 })();

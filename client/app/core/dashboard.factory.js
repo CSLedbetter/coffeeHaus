@@ -3,12 +3,12 @@
 
     angular
         .module('app.core')
-        .factory('saleFactory', saleFactory)
+        .factory('dashboardFactory', dashboardFactory)
 
-    saleFactory.$inject = ['$http'];
+    dashboardFactory.$inject = ['$http'];
 
-    function saleFactory($http) {
-       var service = {
+    function dashboardFactory($http) {
+        var service = {
             getAll: getAll,
             getById: getById,
             create: create,
@@ -20,7 +20,7 @@
 
         function getAll() {
             return $http
-                .get('/api/sales')
+                .get('/api/dashboards')
                 .then(function (response) {
                     return response.data;
                 });
@@ -28,31 +28,31 @@
 
         function getById(id) {
             return $http
-                .get('/api/sales/' + id)
+                .get('/api/dashboards/' + id)
                 .then(function (response) {
                     return response.data;
                 });
         }
 
-        function create(sale) {
+        function create(dashboard) {
             return $http
-                .post('/api/sales', sale)
+                .post('/api/dashboards', dashboard)
                 .then(function (response) {
                     return response.data;
                 });
         }
 
-        function update(sale) {
+        function update(dashboard) {
             return $http
-                .put('/api/sales/' + sale.id, sale)
+                .put('/api/dashboards/' + dashboard.id, dashboard)
                 .then(function (response) {
                     return response.data;
                 });
         }
 
-        function remove(sale) {
+        function remove(dashboard) {
             return $http
-                .delete('/api/sales/' + sale.id)
+                .delete('/api/dashboards/' + dashboard.id)
                 .then(function (response) {
                     return response.data;
                 });

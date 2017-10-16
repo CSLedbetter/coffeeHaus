@@ -22,7 +22,7 @@
                     <button class="button btn-primary" ui-sref="customer-detail({id: customer.id })">
                         <i class="fa fa-edit"></i>
                     </button>
-                    <button class="button btn-danger">
+                    <button class="button btn-danger" ng-click="customersGridCtrl.remove({id: customer.id})">
                         <i class="fa fa-trash"></i>
                     </button>
                 </div>
@@ -30,5 +30,3 @@
         </tr>
     </tbody>
 </table>
-ui-sref-active="true"
-ng-show="customer.isVIP"

@@ -11,6 +11,7 @@
         /* jshint validthis:true */
         var vm = this;
         vm.save = save;
+        vm.delete = remove;
 
         activate();
 
@@ -21,7 +22,7 @@
                     .then(function (customer) {
                         vm.customer = customer;
                     });
-            }  else {
+            } else {
                 vm.customer = {};
             }
 
@@ -30,11 +31,13 @@
         function save(customer) {
             customerFactory
                 .update(customer)
-                .then(function() {
+                .then(function () {
                     alert('Saved!');
                     $state.go('customer-grid');
                 });
         };
+
+       
 
     }
 })();
