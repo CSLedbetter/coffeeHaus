@@ -3,11 +3,11 @@
 
     angular
         .module('app.core')
-        .factory('saleFactory', saleFactory)
+        .factory('productFactory', productFactory)
 
-    saleFactory.$inject = ['$http'];
+    productFactory.$inject = ['$http'];
 
-    function saleFactory($http) {
+    function productFactory($http) {
        var service = {
             getAll: getAll,
             getById: getById,
@@ -20,7 +20,7 @@
 
         function getAll() {
             return $http
-                .get('/api/sales')
+                .get('/api/products')
                 .then(function (response) {
                     return response.data;
                 });
@@ -28,31 +28,31 @@
 
         function getById(id) {
             return $http
-                .get('/api/sales/' + id)
+                .get('/api/products/' + id)
                 .then(function (response) {
                     return response.data;
                 });
         }
 
-        function create(sale) {
+        function create(product) {
             return $http
-                .post('/api/sales', sale)
+                .post('/api/products', product)
                 .then(function (response) {
                     return response.data;
                 });
         }
 
-        function update(sale) {
+        function update(product) {
             return $http
-                .put('/api/sales/' + sale.id, sale)
+                .put('/api/products/' + product.id, product)
                 .then(function (response) {
                     return response.data;
                 });
         }
 
-        function remove(sale) {
+        function remove(product) {
             return $http
-                .delete('/api/sales/' + sale.id)
+                .delete('/api/products/' + product.id)
                 .then(function (response) {
                     return response.data;
                 });

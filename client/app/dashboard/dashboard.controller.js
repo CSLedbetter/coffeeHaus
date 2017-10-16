@@ -5,9 +5,9 @@
         .module('app.dashboard')
         .controller('DashboardController', DashboardController)
 
-    DashboardController.$inject = ['$location'];
+    DashboardController.$inject = ['dashboardFactory', '$stateParams', '$state'];
 
-    function DashboardController($location) {
+    function DashboardController(dashboardFactory, $stateParams, $state) {
         /* jshint validthis:true */
         var vm = this;
 
